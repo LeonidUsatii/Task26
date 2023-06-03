@@ -1,18 +1,25 @@
 package org.example;
 
-import java.util.Arrays;
-
 public class Channel {
-    Program[] programs;
+    private String[] programs;
 
     public Channel() {
         this.programs = setPrograms();
     }
 
-    public Program[] setPrograms() {
-        Program[] programs = new Program[15];
-        for (int i = 1; i <= 14; i++) {
-            programs[i] = new Program("Program " + i);
+    public String[] setPrograms() {
+        String[] programs = new String[15];
+        for (int i = 0; i < 15; i++) {
+            programs[i] = new Program("Program " + (i + 1)).getName();
+        }
+        return programs;
+    }
+
+    public String[] getPrograms() {
+        String[] programs = new String[this.programs.length];
+
+        for (int i = 0; i < programs.length; i++) {
+            programs[i] = this.programs[i];
         }
         return programs;
     }

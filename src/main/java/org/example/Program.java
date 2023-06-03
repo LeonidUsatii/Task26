@@ -15,14 +15,4 @@ public class Program {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Program{" +
-                "name=" + name +
-                '}';
-    }
 }
