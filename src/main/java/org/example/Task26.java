@@ -1,6 +1,6 @@
 package org.example;
 
-public class Main {
+public class Task26 {
     public static void main(String[] args) {
 
         TV tv = new TV("Samsung GQ-Q70BAT");
