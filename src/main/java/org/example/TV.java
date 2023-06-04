@@ -1,11 +1,11 @@
 package org.example;
 
+import java.util.Random;
+
 public class TV {
     private final String name;
     private Channel channel;
     private Channel[] channels;
-
-    private RemoteController remoteController;
     private Boolean isOn;
     private int count;
 
@@ -17,42 +17,6 @@ public class TV {
         }
         this.channels = new Channel[65];
         this.isOn = false;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void setChannels(Channel[] channels) {
-        this.channels = channels;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Boolean getIsOn() {
-        return isOn;
-    }
-
-    public Channel[] getChannels() {
-        Channel[] channels1 = new Channel[65];
-        for (int i = 0; i < channels.length; i++) {
-            channels1[i] = this.channels[i];
-        }
-        return channels1;
-    }
-
-    public Channel getChannel() {
-        return channel;
-    }
-
-    public void setChannel(Channel channel) {
-        this.channel = channel;
     }
 
     public void setIsOn(Boolean on) {
@@ -71,6 +35,27 @@ public class TV {
         } else {
             System.err.println("Все каналы заняты");
         }
+    }
+
+    public void on(int channelNumber) {
+        Random random = new Random();
+        this.channel = null;
+        if (channelNumber >= 0 && channelNumber < channels.length) {
+            this.channel = channels[channelNumber];
+        } else {
+            System.out.println("Такого канала нет");
+        }
+        if (channelNumber < this.count) {
+
+            Program program = channels[channelNumber].
+                    getPrograms()[random.nextInt(1, channel.getPrograms().length)];
+
+            System.out.println("Я телевизор " + name + " показываю программу " +
+                    program.getName() + " на канале " + channelNumber);
+        } else {
+            System.out.println("Такого канала нет");
+        }
+
     }
 
 }
