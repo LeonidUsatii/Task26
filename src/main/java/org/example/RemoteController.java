@@ -10,10 +10,6 @@ public class RemoteController {
         this.tv = tv;
     }
 
-    public TV getTv() {
-        return tv;
-    }
-
     public void setOn(Boolean on) {
         tv.setIsOn(on);
         }
