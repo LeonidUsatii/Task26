@@ -20,8 +20,7 @@ public class TV {
     }
 
     public void setIsOn(Boolean on) {
-        isOn = on;
-        if (isOn) {
+        if (on) {
             System.out.println("Я телевизор " + this.name + " включён ");
         } else {
             System.out.println("Я телевизор " + this.name + " выключен ");
