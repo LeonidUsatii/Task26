@@ -3,6 +3,7 @@ package org.example;
 import java.util.Random;
 
 public class TV {
+    Random random = new Random();
     private final String name;
     private Channel channel;
     private Channel[] channels;
@@ -37,7 +38,6 @@ public class TV {
     }
 
     public void on(int channelNumber) {
-        Random random = new Random();
         this.channel = null;
         if (channelNumber >= 0 && channelNumber < channels.length) {
             this.channel = channels[channelNumber];
